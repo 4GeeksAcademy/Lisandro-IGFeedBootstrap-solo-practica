@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Photo Feed</title>
+    <script src="https://kit.fontawesome.com/bc02beb09e.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="container-fluid">
+    <header  class="flex between gap-2 header">
+
+         <!-- el Header tiene 2 divs, porque queremos que el boton y la tuerca de vayan a la derecha, entonces tiene que estar en 2 divs
+            distintos. -->
+
+        <!-- Primero, estan los 2 logos de instagram -->
+        <div>
+            <img class="logo1" src="https://www.unipile.com/wp-content/uploads/2022/09/Logo-Instagram-noir-1.png" alt="instagram logo"/>
+            <img class="logo2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1280px-Instagram_logo.svg.png" alt="instagram logo"/>
+          </div>
+
+
+         <!-- Segundo, esta el div de la parte de la derecha, es decir, el boton Create new post con el modal y la tuerca.  -->
+        <div class="flex">
+           
+            <!-- Este es el boton de crear de nuevo post sacado de Bootstrap -->
+            <button type="button" class="btn btn-success button1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Create a new post
+            </button>
+
+            <!-- Modal -->
+            <!-- Este es el Modal sacadao de Bootstrap, es lo que aparece cuando tocas el boton de crear nuevo post
+                 (Navs & tabs - Modal - el primero que aparece) -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Create a new post</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+
+                    <!-- Aca va lo que dice Caption y lo que esta dentro del lugar para texto -->
+                   <strong>Caption:</strong>
+                    <div class="form-floating">
+                      <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                      <label for="floatingTextarea2">Add the caption of your post here</label>
+                    </div>
+
+                    <!-- Aca va el logo de la Camara y la Location que esta dentro del Modal -->
+                    <div class="flex">
+                      <div class="figures"><i class="fa-solid fa-camera"></i></div>
+                      <div class="figures"><i class="fa-solid fa-location-dot"></i></div>
+                    </div>
+                  </div>
+                  <!-- Aca van las dos opciones de Close y Publish -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success ">Publish</button>
+                    <!-- Lo que dice sucess es para que el boton de Publish se vea verde, es una clase sacada de Bootstrap -->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Esta es la tuerca de la derecha, sacada de Bootstrap (Dropdowns) -->
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <!-- Este es el icono de la tuerca. Lo que dice dropdown toggle dice que el clickearlo se te despliega -->
+                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-gear"></i>
+                     </a>
+
+            <!-- Aca empieza el dropdown que aparece cuando tocas la tuerca. Lo copio de Bootstrap junto con lo de arriba,
+            y le cambio los nombres de las opciones (Logout, Profile, Accesibility, Privacy) -->
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="https://google.es">Profile</a></li>
+              <li><a class="dropdown-item" href="https://google.es">Accesibility</a></li>
+              <li><a class="dropdown-item" href="https://google.es">Privacy and Data</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item logout" href="https://google.es">Log out</a></li>
+            </ul>
+          </li>
+        </ul>
+    </div>
+    </header>
+    <!-- Despues del Dropdown cierro el Header -->
+
+    <!-- Despues viene la parte principal, lo de las fotos. El le puso clase Main, PERO PUEDE SER TAMBIEN UN SIMPLE DIV.
+    Pero es mejor poner Main para que puedas diferenciarlos bien. -->
+    <main class="flex flex-center flex-column">
+
+        <!-- Le aplico la clase Flex center y Flex column para poder diferenciarlos bien, pero puede ser otro nombre.
+        Flex center es para que las imagenes de cambio de vista vayna al centro.
+        Flex column es para que ambos elementos del main (imagenes de cambio de vista y fotos) se ponga en columnas, 
+        uno debajo del otro. -->
+
+        <!-- Aca empieza la parte del feed que son 3 fotos por linea.
+        A partir de aca fue todo sacado de Bootstrap (Navs & Tabs). -->
+
+        <!-- Esta parte es el cambio de vista con sus 2 iconos. Bootstrap (Navs & Tabs - el que tiene los 3 botones que dicen Home, Profile, Contact).
+    y cambio esas palabras por los dos iconos.
+    Ambos iconos los busco en otra pagina y los cambio. Estan a la derecha de todo donde dice "Fa-Table cells" y "Fa-square"   -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true"><i class="fa-solid fa-table-cells"></i></button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false"><i class="fa-regular fa-square"></i></button>
+            </li>
+          </ul>
+        
+
+
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                <div class="row img-wrap">
+                    <div class="col-sm-12 col-md-6 col-lg-4 img-1">
+                      <img src="https://images.pexels.com/photos/1646311/pexels-photo-1646311.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""/>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 img-2">
+                        <img src="https://images.pexels.com/photos/2335126/pexels-photo-2335126.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""/>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 img-3">
+                        <img src="https://images.pexels.com/photos/4091975/pexels-photo-4091975.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""/>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 img-1">
+                      <img src="https://images.pexels.com/photos/14836397/pexels-photo-14836397.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt=""/>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 img-2">
+                        <img src="https://images.pexels.com/photos/15910790/pexels-photo-15910790/free-photo-of-animal-perro-mascota-mono.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt=""/>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 img-3">
+                        <img src="https://images.pexels.com/photos/16243057/pexels-photo-16243057/free-photo-of-animal-perro-mascota-mono.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt=""/>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 img-1">
+                      <img src="https://images.pexels.com/photos/1643457/pexels-photo-1643457.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt=""/>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 img-2">
+                        <img  src="https://images.pexels.com/photos/384555/pexels-photo-384555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt=""/>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 img-3">
+                        <img src="https://images.pexels.com/photos/1835008/pexels-photo-1835008.jpeg?auto=compress&cs=tinysrgb&w=600" alt=""/>
+                    </div>
+                  </div>
+            </div>
+
+            <!-- Aca empieza la otra parte del feed, en la que es solo 1 foto por linea. Saco cosas de Bootstrap pero no se que.
+            El flex, el flex column, el flex center y cards lo hizo el -->
+            <div class=" d-grid gap-3 row tab-pane fade flex flex-column flex-center cards" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+              
+              <!-- Creo que dijo que lo de col 12 y container lo saco de Bootstrap, pero todo lo otro lo hizo el. -->
+              <div class="col-12 container-post">
+
+
+                <!-- Cada Card / foto esta divida en 3 (titulo, imagen y contenido),  -->
+                <!--aca esta el titulo de la foto -->
+                <div>                 
+                  <h4 class="text">Inmenso y hermoso, el oceano</h2>
+                </div>
+
+                 <!-- imagen -->
+                <div class="img-1" >                 
+                  <img src="https://images.pexels.com/photos/1646311/pexels-photo-1646311.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="oceano"/>
+                </div>
+
+                <!-- Contenido -->
+                <div>
+                  <p class="text"><strong>105.975 likes</strong></p>
+                  <p class="col-12 post text">Cada año mueren más de 100.000 tiburones por culpa del hombre, cuando cada año solo mueren alrededor de 7 personas por culpa de tiburones. ¿Y los peligrosos son ellos?</p>
+                </div>
+              </div>
+              <div class="col-12 container-post">
+
+                <!-- Aca empieza la otra tarjeta/foto. -->
+
+                <!-- Titulo -->
+                <div>
+                  <h4 class="text">Un pedrusco más</h2>
+
+                <!-- Imagen -->
+                </div>
+                <div  class="img-1">
+                  <img src="https://images.pexels.com/photos/2335126/pexels-photo-2335126.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="montaña"/>
+                </div>
+
+                <!-- Contenido -->
+                <div>
+                  <p class="col-12 text"><strong>242.653 likes</strong></p>
+                  <p class="post text">Si Maoma no va a la montaña, la montaña va a Maoma.</p>
+                </div>
+              </div>
+              <div class="col-12  container-post">
+                <div>
+                  <h4 class="text">Lago di Commo</h2>
+                </div>
+                <div  class="img-1">
+                  <img src="https://images.pexels.com/photos/4091975/pexels-photo-4091975.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="lago"/>
+                </div>
+                <div>
+                  <p class="text"><strong>197 likes</strong></p>
+                  <p class="post text">No le deis like.</p>
+                </div>
+              </div>
+              <div class="col-12  container-post">
+                <div>
+                  <h4 class="text">Shigan</h2>
+                </div>
+                <div  class="img-1">
+                  <img src="https://images.pexels.com/photos/14836397/pexels-photo-14836397.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="shigan"/>
+                </div>
+                <div>
+                  <p class="text"><strong>586.438 likes</strong></p>
+                  <p class="post text">Shigan.</p>
+                </div>
+              </div>
+              <div class="col-12 container-post">
+                <div>
+                  <h4 class="text">Roxy</h2>
+                </div>
+                <div  class="img-1">
+                  <img src="https://images.pexels.com/photos/15910790/pexels-photo-15910790/free-photo-of-animal-perro-mascota-mono.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="shigan"/>
+                </div>
+                <div>
+                  <p class="text"><strong>382.459 likes</strong></p>
+                  <p class="post text">Roxy.</p>
+                </div>
+              </div>
+              <div class="col-12  container-post">
+                <div>
+                  <h4 class="text">Dexter</h2>
+                </div>
+                <div  class="img-1">
+                  <img src="https://images.pexels.com/photos/16243057/pexels-photo-16243057/free-photo-of-animal-perro-mascota-mono.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="shigan"/>
+                </div>
+                <div>
+                  <p class="text"><strong>1.934.051 likes</strong></p>
+                  <p class="post text">Dexter.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+/* HEADER */
+
+.header{
+    margin: 30px 60px 20px 60px;
+    /* background-color: lightgrey; */
+}
+
+/* <!-- estos son los dos logos de instagram --> */
+.logo1{
+  height:40px;
+}
+.logo2{
+    height:60px;
+  }
+
+  /* Esto es para cambiar el color a rojo del boton de Logout que esta dentro de la tuerca.
+ No hace falta escribir todo lo que le pusiste a la clase en el html, solo con una palabra ya lo detecta (logout) */
+ .logout{
+    color:red;
+   }
+
+/* Aca va el logo de la Camara y la Location que esta dentro del Modal */
+.figures{
+    border-radius: 5px;
+    border: 0.5px solid rgb(196, 196, 196);
+    padding:10px 0px 10px 0px;
+    margin:10px 10px 0 0;
+    width:40px;
+    display:flex;
+    justify-content: center;
+  }
+
+  /* Este class es para separar los logos de los botones. Si hay 3 items el tercero quedara en el centro,
+  para que los 3 esten lo mas separado posible el uno del otro */
+  .between{
+    justify-content: space-between;
+  }
+
+ 
+  /* Este es todo un div con la clase Flex */
+.flex{
+  display:flex;
+  align-items: center;
+}
+
+/* Flex center es para que las imagenes de cambio de vista vayan al centro. */
+.flex-center{
+  justify-content: center;
+}
+
+/* .flex-end{
+    justify-content: flex-end;
+}
+.flex-start{
+    justify-content: flex-start;
+} */
+
+.button1{
+  margin-right:50px;
+}
+
+/* Flex column es para que ambos elementos del main (imagenes de cambio de vista y fotos) se ponga en columnas, uno debajo del otro. */
+ .flex-column{
+    flex-direction: column;
+ }
+
+ /* El Wrap hace que las fotos cambien de linea cuando achico o agrande el espacio de la pantalla. */
+ .img-wrap{
+    margin-bottom:5vh;
+ }
+ 
+ /* .img1{
+    background-image: url(https://images.pexels.com/photos/1646311/pexels-photo-1646311.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    height: 400px;
+    width:400px;
+    background-size: cover;
+}
+ .img2{
+    background-image: url(https://images.pexels.com/photos/2335126/pexels-photo-2335126.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    height: 400px;
+    width:400px;
+    background-size: cover;
+}
+ .img3{
+    background-image: url(https://images.pexels.com/photos/4091975/pexels-photo-4091975.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    height: 400px;
+    width:400px;
+    background-size: cover;
+} */
+
+/* Aca esta aplicado lo de las fotos */
+.img-1, .img-2, .img-3 {
+    /* width: 30vw;  */
+    height: 35vw;
+padding: 10px 10px 10px 10px;
+}
+.img-1 img, .img-2 img, .img-3 img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+.img-cards{
+  width:50vw;
+}
+.post{
+  width:35vw;
+}
+.container-post{
+  border-radius: 5px;
+  border: 0.5px solid grey;
+  padding: 10px 0 10px 0;
+  /* margin-bottom: 10px; */
+}
+
+/* Este es el texto que esta arriba de cada foto.
+El margin left es para que no se pegue a la linea */
+.text{
+  margin-left:10px;
+  text-align: justify;
+}
+
+/* Esto creo que es para lo de Cards/Fotos. */
+.cards{
+  margin-top:10px;
+}
